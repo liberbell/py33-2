@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'myapp/index.html', context)
 
 def about(request):
-    return render(request, 'about.')
+    return render(request, 'About.')
 
 def info(request):
-    return 
+    return render(request, 'Info.')
