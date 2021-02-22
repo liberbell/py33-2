@@ -7,3 +7,6 @@ def index(request):
         'name': 'Eric',
     }
     return render(request, 'myapp/index.html', context)
+
+def about(request):
+    return
