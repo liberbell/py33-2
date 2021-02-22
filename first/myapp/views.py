@@ -9,4 +9,6 @@ def index(request):
     return render(request, 'myapp/index.html', context)
 
 def about(request):
-    return HttpResponse('about.')
+    return HttpResponse(request, 'about.')
+
+    
