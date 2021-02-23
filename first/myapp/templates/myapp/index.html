@@ -1,5 +1,10 @@
 {% extends 'myapp/base.html' %}
 
+{% block title %}
+    Top Page
+{% endblock title %}
+
 {% block content %}
     <h1>hello, {{ name }}</h1>
+    {% include 'myapp/page.html' %}
 {% endblock content %}
