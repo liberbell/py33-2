@@ -5,4 +5,4 @@ from django.utils import timezone
 class Day(models.Model):
     title = models.CharField('Title', max_length=200)
     text = models.TextField('Text')
-    date = models.DayTimeField('DATE', default=timezone.now)
+    date = models.DateTimeField('DATE', default=timezone.now)
