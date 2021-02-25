@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
 from .forms import DayCreateForm
+from .models import Day
 
 # Create your views here.
 def index(request):
-    return render(request, 'diary/day_list.html')
+    context = {
+        'day_list': Day.objects.all()
+    }
+    return render(request)
 
 def add(request):
     form = DayCreateForm(request.POST or None)
