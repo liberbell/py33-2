@@ -13,6 +13,6 @@ def add(request):
         return redirect('diary:index')
 
     context = {
-        'form': DayCreateForm()
+        'form': form
     }
     return render(request, 'diary/day_form.html', context)
