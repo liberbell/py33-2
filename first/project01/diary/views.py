@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import DayCreateForm
 
 # Create your views here.
@@ -11,7 +11,7 @@ def add(request):
     if request.method == 'POST' and form.is_valid():
         form.save()
         return redirect('diary:index')
-        
+
     context = {
         'form': DayCreateForm()
     }
