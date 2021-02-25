@@ -12,13 +12,14 @@
     <title>Diary App</title>
   </head>
   <body>
-    <nav class="nav">
-        <a class="nav-link" href="{% url 'diary:index' %}">List</a>
-        <a class="nav-link" href="{% url 'diary:add' %}">Add</a>
-      </nav>
-    {% block content %}
-    {% endblock content %}
-
+      <div class="container">
+        <nav class="nav">
+            <a class="nav-link" href="{% url 'diary:index' %}">List</a>
+            <a class="nav-link" href="{% url 'diary:add' %}">Add</a>
+        </nav>
+        {% block content %}
+        {% endblock content %}
+      </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
