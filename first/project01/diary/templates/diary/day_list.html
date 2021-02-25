@@ -2,8 +2,20 @@
 
 {% block content %}
 <h1>Day list</h1>
-
-{% for day in day_list %}
-<h2>{{ day.title }}</h2>
-{% endfor %}
+<table>
+    <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for day in day_list %}
+        <tr>
+            <td>{{ day.title }}</td>
+            <td>{{ day.date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock content %}
