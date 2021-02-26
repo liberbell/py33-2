@@ -2,8 +2,15 @@
 
 {% block content %}
 <form action="" method="POST">
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-    {% csrf_token %}
+    <table class="table">
+        <tr>
+            <th>TITLE</th>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <th>TEXT</th>
+            <td>{{ form.text }}</td>
+        </tr>
+    </table>
 </form>
 {% endblock content %}
