@@ -28,3 +28,9 @@ def update(request, pk):
 
     if request.method == 'POST' and form.is_valid():
         form.save()
+        return redirect('diary:index')
+
+    context = {
+        'form': form
+    }
+    return render(request, 'diary/day_form.html', context)
