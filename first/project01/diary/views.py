@@ -34,3 +34,15 @@ def update(request, pk):
         'form': form
     }
     return render(request, 'diary/day_form.html', context)
+
+def delete(request, pk):
+    day = get_object_or_404(Day, pk=pk)
+
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        return redirect('diary:index')
+
+    context = {
+        'form': form
+    }
+    return render(request, 'diary/day_form.html', context)
