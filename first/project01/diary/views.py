@@ -23,3 +23,8 @@ def add(request):
 
 def update(request, pk):
     day = get_object_or_404(Day, pk=pk)
+
+    form = DayCreateForm(request.POST or None, instance=day)
+
+    if request.method == 'POST' and form.is_valid():
+        form.save()
