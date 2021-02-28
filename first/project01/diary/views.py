@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from django.views import generic
 from .forms import DayCreateForm
 from .models import Day
@@ -10,17 +11,17 @@ from .models import Day
 #     }
 #     return render(request, 'diary/day_list.html', context)
 
-def add(request):
-    form = DayCreateForm(request.POST or None)
+# def add(request):
+#     form = DayCreateForm(request.POST or None)
 
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('diary:index')
+#     if request.method == 'POST' and form.is_valid():
+#         form.save()
+#         return redirect('diary:index')
 
-    context = {
-        'form': form
-    }
-    return render(request, 'diary/day_form.html', context)
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'diary/day_form.html', context)
 
 def update(request, pk):
     day = get_object_or_404(Day, pk=pk)
@@ -58,3 +59,8 @@ def detail(request, pk):
 
 class IndexView(generic.ListView):
     model = Day
+
+class AddView(generic.CreateView):
+    model = Day
+    form_class = DayCreateForm
+    success_url = reverse_lazy('diary/index')
