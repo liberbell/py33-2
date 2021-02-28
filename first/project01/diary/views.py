@@ -10,51 +10,51 @@ from .models import Day
 #     }
 #     return render(request, 'diary/day_list.html', context)
 
-# def add(request):
-#     form = DayCreateForm(request.POST or None)
+def add(request):
+    form = DayCreateForm(request.POST or None)
 
-#     if request.method == 'POST' and form.is_valid():
-#         form.save()
-#         return redirect('diary:index')
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        return redirect('diary:index')
 
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'diary/day_form.html', context)
+    context = {
+        'form': form
+    }
+    return render(request, 'diary/day_form.html', context)
 
-# def update(request, pk):
-#     day = get_object_or_404(Day, pk=pk)
+def update(request, pk):
+    day = get_object_or_404(Day, pk=pk)
 
-#     form = DayCreateForm(request.POST or None, instance=day)
+    form = DayCreateForm(request.POST or None, instance=day)
 
-#     if request.method == 'POST' and form.is_valid():
-#         form.save()
-#         return redirect('diary:index')
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        return redirect('diary:index')
 
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'diary/day_form.html', context)
+    context = {
+        'form': form
+    }
+    return render(request, 'diary/day_form.html', context)
 
-# def delete(request, pk):
-#     day = get_object_or_404(Day, pk=pk)
+def delete(request, pk):
+    day = get_object_or_404(Day, pk=pk)
 
-#     if request.method == 'POST':
-#         day.delete()
-#         return redirect('diary:index')
+    if request.method == 'POST':
+        day.delete()
+        return redirect('diary:index')
 
-#     context = {
-#         'day': day
-#     }
-#     return render(request, 'diary/day_confirm_delete.html', context)
+    context = {
+        'day': day
+    }
+    return render(request, 'diary/day_confirm_delete.html', context)
 
-# def detail(request, pk):
-#     day = get_object_or_404(Day, pk=pk)
+def detail(request, pk):
+    day = get_object_or_404(Day, pk=pk)
 
-#     context = {
-#         'day': day
-#     }
-#     return render(request, 'diary/day_detail.html', context)
+    context = {
+        'day': day
+    }
+    return render(request, 'diary/day_detail.html', context)
 
 class indexview(generic.ListView):
     model = Day
