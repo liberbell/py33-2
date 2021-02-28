@@ -37,17 +37,17 @@ from .models import Day
 #     }
 #     return render(request, 'diary/day_form.html', context)
 
-def delete(request, pk):
-    day = get_object_or_404(Day, pk=pk)
+# def delete(request, pk):
+#     day = get_object_or_404(Day, pk=pk)
 
-    if request.method == 'POST':
-        day.delete()
-        return redirect('diary:index')
+#     if request.method == 'POST':
+#         day.delete()
+#         return redirect('diary:index')
 
-    context = {
-        'day': day
-    }
-    return render(request, 'diary/day_confirm_delete.html', context)
+#     context = {
+#         'day': day
+#     }
+#     return render(request, 'diary/day_confirm_delete.html', context)
 
 def detail(request, pk):
     day = get_object_or_404(Day, pk=pk)
@@ -69,3 +69,7 @@ class UpdateView(generic.UpdateView):
     model = Day
     form_class = DayCreateForm
     success_url = reverse_lazy('diary:index')
+
+class DeleteView(generic.DeleteView):
+    model= Day
+    
