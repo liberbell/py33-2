@@ -56,5 +56,5 @@ def detail(request, pk):
     }
     return render(request, 'diary/day_detail.html', context)
 
-class indexview(generic.ListView):
+class IndexView(generic.ListView):
     model = Day
