@@ -72,4 +72,4 @@ class UpdateView(generic.UpdateView):
 
 class DeleteView(generic.DeleteView):
     model= Day
-    
+    success_url = reverse_lazy('diary:index')
