@@ -3,18 +3,16 @@
 {% block content %}
 <table class="table">
     <tr>
-        <th>{{ form.title.label }}</th>
-        <td>{{ form.title }}</td>
+        <th>Title</th>
+        <td>{{ day.title }}</td>
     </tr>
     <tr>
-        <th>{{ form.text.label }}</th>
-        <td>{{ form.text }}</td>
+        <th>Text</th>
+        <td>{{ dayda.text }}</td>
     </tr>
     <tr>
-        <th>{{ form.date.label }}</th>
-        <td>{{ form.date }}</td>
+        <th>Date</th>
+        <td>{{ day.date }}</td>
     </tr>
 </table>
-<button type="submit" class="btn btn-primary">Submit</button>
-{% csrf_token %}
 {% endblock content %}
