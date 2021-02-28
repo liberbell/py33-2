@@ -49,13 +49,13 @@ from .models import Day
 #     }
 #     return render(request, 'diary/day_confirm_delete.html', context)
 
-def detail(request, pk):
-    day = get_object_or_404(Day, pk=pk)
+# def detail(request, pk):
+#     day = get_object_or_404(Day, pk=pk)
 
-    context = {
-        'day': day
-    }
-    return render(request, 'diary/day_detail.html', context)
+#     context = {
+#         'day': day
+#     }
+#     return render(request, 'diary/day_detail.html', context)
 
 class IndexView(generic.ListView):
     model = Day
@@ -73,3 +73,6 @@ class UpdateView(generic.UpdateView):
 class DeleteView(generic.DeleteView):
     model= Day
     success_url = reverse_lazy('diary:index')
+
+class DetailView(generic.DetailView):
+    model = Day
