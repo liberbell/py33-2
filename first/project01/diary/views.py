@@ -23,19 +23,19 @@ from .models import Day
 #     }
 #     return render(request, 'diary/day_form.html', context)
 
-def update(request, pk):
-    day = get_object_or_404(Day, pk=pk)
+# def update(request, pk):
+#     day = get_object_or_404(Day, pk=pk)
 
-    form = DayCreateForm(request.POST or None, instance=day)
+#     form = DayCreateForm(request.POST or None, instance=day)
 
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('diary:index')
+#     if request.method == 'POST' and form.is_valid():
+#         form.save()
+#         return redirect('diary:index')
 
-    context = {
-        'form': form
-    }
-    return render(request, 'diary/day_form.html', context)
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'diary/day_form.html', context)
 
 def delete(request, pk):
     day = get_object_or_404(Day, pk=pk)
@@ -64,3 +64,7 @@ class AddView(generic.CreateView):
     model = Day
     form_class = DayCreateForm
     success_url = reverse_lazy('diary:index')
+
+class UpdateView(generic.UpdateView):
+    model = Day
+    form_class = DayCreateForm
