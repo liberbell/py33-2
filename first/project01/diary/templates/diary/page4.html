@@ -18,7 +18,11 @@
             </li>
           {% else %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ link_page }}"></a>
+                <a class="page-link" href="?page={{ link_page }}">
+                {{ link_page }}
+                </a>
             </li>
+          {% endif %}
+        {% endfor %}
     </ul>
 </nav>
