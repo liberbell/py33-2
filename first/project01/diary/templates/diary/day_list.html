@@ -18,12 +18,12 @@
             <td>{{ day.date }}</td>
             <td>
                 {% if user.is_superuser %}
-                    <a href="{% url 'admin:diary_day_change' day.pk %}" target="_blank">Update</a>
+                    <a href="{% url 'diary:update' day.pk %}" target="_blank">Update</a>
                 {% endif %}
             </td>
             <td>
                 {% if user.is_superuser %}
-                    <a href="{% url 'admin:diary_day_delete' day.pk %}" target="_blank">Delete</a>
+                    <a href="{% url 'diary:delete' day.pk %}" target="_blank">Delete</a>
                 {% endif %}
             </td>
         </tr>
