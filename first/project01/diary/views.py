@@ -72,7 +72,7 @@ class UpdateView(LoginRequiredMixin, generic.UpdateView):
     form_class = DayCreateForm
     success_url = reverse_lazy('diary:index')
 
-class DeleteView(LoginRequiredMixin, eneric.DeleteView):
+class DeleteView(LoginRequiredMixin, generic.DeleteView):
     model= Day
     success_url = reverse_lazy('diary:index')
 
