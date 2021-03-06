@@ -1,5 +1,19 @@
 {% extends 'employee/base.html' %}
 
 {% block content %}
-Top Page
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock content %}
