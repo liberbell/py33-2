@@ -12,3 +12,4 @@ class Department(models.Model):
 class Employee(models.Model):
     first_name = models.CharField('first_name', max_length=20)
     last_name = models.CharField('last_name', max_length=20)
+    email = models.EmailField('email', blank=True)
