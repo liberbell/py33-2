@@ -17,4 +17,4 @@ class Employee(models.Model):
     created_at = models.DateTimeField('registerd_date', default=timezone.now)
 
     def __str__(self):
-        return '{0}{1}{2}'.format(self.last_name, self.first_name, self.department)
+        return '{0} {1} {2}'.format(self.last_name, self.first_name, self.department)
