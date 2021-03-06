@@ -15,6 +15,8 @@
         {% for employee in employee_list %}
         <tr>
             <th>{{ employee.pk }}</th>
+            <th>{{ employee.first_name }}</th>
+            <th>{{ employee.last_name }}</th>
         </tr>
         {% endfor %}
     </tbody>
