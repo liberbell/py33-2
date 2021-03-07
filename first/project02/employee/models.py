@@ -21,6 +21,7 @@ class Employee(models.Model):
     last_name = models.CharField('last_name', max_length=20)
     email = models.EmailField('email', blank=True)
     department = models.ForeignKey(Department, verbose_name='department', on_delete=models.PROTECT,)
+    club = models.ManyToManyField(Club, verbose_name='club_name')
     created_at = models.DateTimeField('registerd_date', default=timezone.now)
 
     def __str__(self):
