@@ -10,3 +10,5 @@ class IndexView(generic.ListView):
 
     def get_context_data(self):
         context = super().get_context_data()
+        context['form'] = SearchForm(self.request.GET)
+        return context
