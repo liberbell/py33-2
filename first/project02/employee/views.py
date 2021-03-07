@@ -15,3 +15,8 @@ class IndexView(generic.ListView):
         
         # get all employee
         queryset = super().get_queryset()
+
+        # filter by department
+        department = form.cleaned_data['department']
+        if department:
+            queryset = queryset.filter(department=department)
