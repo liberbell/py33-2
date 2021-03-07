@@ -8,6 +8,9 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
+
+class Club(models.Model):
+    name =  models.CharField('club_name', max_length=20)
     
 class Employee(models.Model):
     first_name = models.CharField('first_name', max_length=20)
