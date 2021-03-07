@@ -12,3 +12,6 @@ class IndexView(generic.ListView):
         context = super().get_context_data()
         context['form'] = SearchForm(self.request.GET)
         return context
+        
+        # get all employee
+        queryset = super().get_queryset()
