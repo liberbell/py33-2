@@ -14,9 +14,11 @@
     <tbody>
         {% for employee in employee_list %}
         <tr>
-            <th>{{ employee.pk }}</th>
-            <th>{{ employee.first_name }}</th>
-            <th>{{ employee.last_name }}</th>
+            <td>{{ employee.pk }}</td>
+            <td>{{ employee.first_name }}</td>
+            <td>{{ employee.last_name }}</td>
+            <td>{{ employee.email}}</td>
+            <td>{{ employee.department }}</td>
         </tr>
         {% endfor %}
     </tbody>
