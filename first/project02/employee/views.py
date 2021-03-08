@@ -7,7 +7,7 @@ from .forms import SearchForm
 class IndexView(generic.ListView):
     # template_name = 'employee/employee_list.html'
     model = Employee
-    paginate_by = 2
+    paginate_by = 1
 
     def get_context_data(self):
         context = super().get_context_data()
