@@ -10,5 +10,11 @@
         {% endif %}
 
         {% for link_page in page_obj.paginator.page_range %}
+            {% if link_page == page_obj.number %}
+            <li class="page-item active">
+                <a class="page-link" href="?{% url_replace request 'page' link_page %}">
+                    {{ link_page }}
+                </a>
+            </li>
     </ul>
 </nav>
