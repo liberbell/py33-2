@@ -16,7 +16,8 @@ class Post(models.Model):
     title = models.CharField('title', max_length=255)
     text = models.TextField('content')
     created_at = models.DateTimeField('created_date', default=timezone.now)
+    category = models.ForeignKey(Category, verbose_name='category', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.name
+        return self.title
     
