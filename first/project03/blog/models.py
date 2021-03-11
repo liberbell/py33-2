@@ -16,3 +16,7 @@ class Post(models.Model):
     title = models.CharField('title', max_length=255)
     text = models.TextField('content')
     created_at = models.DateTimeField('created_date', default=timezone.now)
+
+    def __str__(self):
+        return self.name
+    
