@@ -22,9 +22,11 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'blog:index' %}">Home</a>%
           </li>
+          {% if user.is_superuser %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'admin:index'%}">Link</a>
           </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
