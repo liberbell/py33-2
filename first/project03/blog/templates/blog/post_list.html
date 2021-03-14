@@ -3,8 +3,8 @@
 {% block content %}
 {% for post in post_list %}
     <div class="card mb-3">
+        <h2 class="card-header">{{ post.title }}</h2>
         <div class="card-body">
-        <h4 class="card-title">{{ post.title }}</h4>
         <a href="#!" class="btn btn-primary">Read more</a>
         </div>
     </div>  
