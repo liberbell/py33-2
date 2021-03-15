@@ -48,7 +48,7 @@
             <ul class="list-group">
               <li class="list-group-item bg-dark text-white">Category list</li>
               {% for category in category_list %}
-                <li class="list-group-item"><a href="">{{ category }}</a></li>
+                <li class="list-group-item"><a href="{% url 'blog:category' category.pk %}">{{ category }}</a></li>
               {% endfor %}
             </ul>  
           </div>
