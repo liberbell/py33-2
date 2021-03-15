@@ -9,4 +9,4 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         queryse t= Post.objects.order_by('-created_at')
-        keyword = self.request.GET
+        keyword = self.request.GET.get('search-key')
