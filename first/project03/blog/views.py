@@ -7,7 +7,7 @@ from django.db.models import Q
 class IndexView(generic.ListView):
     # template_name = 'blog/post_list.html'
     model = Post
-    paginate_by = 5
+    paginate_by = 2
 
     def get_queryset(self):
         queryset = Post.objects.order_by('-created_at')
