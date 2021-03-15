@@ -24,3 +24,5 @@ class CategoryView(generic.ListView):
 
     def get_queryset(self):
         category = get_object_or_404(Category, pk=self.kwargs['pk'])
+        queryset = Post.objects.order_by('-created_at').filter(category=category)
+        return queryset
