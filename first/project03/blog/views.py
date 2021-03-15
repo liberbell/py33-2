@@ -11,4 +11,5 @@ class IndexView(generic.ListView):
         queryse t= Post.objects.order_by('-created_at')
         keyword = self.request.GET.get('search-key')
         if keyword:
-            queryset = queryset.filter()
+            queryset = queryset.filter(title='keyword')
+        return queryset
