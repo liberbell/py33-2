@@ -8,5 +8,5 @@
         {{ post.text | linebreaksbr | urlize }}
     </div>
 </div>
-<a class="btn btn-dark" href="{% url 'blog:comment' post.pk %}"></a>
+<a class="btn btn-dark" href="{% url 'blog:comment' post.pk %}">Enter comment</a>
 {% endblock content %}
