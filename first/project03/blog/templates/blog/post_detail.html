@@ -7,5 +7,6 @@
         <p>{{ post.created_at }}, {{ post.category }}</p>
         {{ post.text | linebreaksbr | urlize }}
     </div>
-</div>  
+</div>
+<a class="btn btn-dark" href="{% url 'blog:comment' post.pk %}"></a>
 {% endblock content %}
