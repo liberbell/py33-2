@@ -40,3 +40,4 @@ class CommentView(generic.CreateView):
         comment = form.save(commit=False)
         comment.post = get_object_or_404(Post, pk=post_pk)
         comment.save()
+        return redirect.('blog:detail', pk=post_pk)
