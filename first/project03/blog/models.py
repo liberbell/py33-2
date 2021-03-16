@@ -21,3 +21,8 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+class Comment(models.Model):
+    # Blog comment
+    name = models.CharField('name', max_length=30, default='nemo')
+    text = models.TextField('text')
+    post = models.ForeignKey(Post, verbose_name='linkedcontent')
