@@ -1,8 +1,10 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from .models import Post, Category, Comment
-from django.db.models import Q
 from .forms import CommentCreateForm
+from .models import Post, Category, Comment
+
+
 
 # Create your views here.
 class IndexView(generic.ListView):
