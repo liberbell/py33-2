@@ -25,4 +25,5 @@ class Comment(models.Model):
     # Blog comment
     name = models.CharField('name', max_length=30, default='nemo')
     text = models.TextField('text')
-    post = models.ForeignKey(Post, verbose_name='linkedcontent')
+    post = models.ForeignKey(Post, verbose_name='linkedcontent', on_delete=models.PROTECT)
+    created_at = models.DateTimeField('created_date', default=timezone.now)
