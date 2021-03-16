@@ -31,4 +31,6 @@ class CategoryView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Post
 
-class CommentView()
+class CommentView(generic.CreateView):
+    model = Comment
+    form_class = CommentCreateForm
