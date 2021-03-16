@@ -27,3 +27,7 @@ class Comment(models.Model):
     text = models.TextField('text')
     post = models.ForeignKey(Post, verbose_name='linkedcontent', on_delete=models.PROTECT)
     created_at = models.DateTimeField('created_date', default=timezone.now)
+
+    def __str__(self):
+        return self.text[:10]
+    
