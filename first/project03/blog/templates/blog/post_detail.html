@@ -12,7 +12,7 @@
 {% for comment in post.comment_set.all %}
 <p>
     {{ comment.name}}<br>
-    {{ comment.text | linebreaksbr }}}
+    {{ comment.text | linebreaksbr }}
 </p>
 {% endfor %}
 
