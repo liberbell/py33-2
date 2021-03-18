@@ -2,7 +2,10 @@
 
 {% block content %}
 <form action="" method="POST">
-    {{ form.as_p }}
+    {{ form.non_field_errors }}
+    <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
+    </div>
     <button type="submit" class="btn btn-dark">Submit</button>
     {% csrf_token %}
 </form>
