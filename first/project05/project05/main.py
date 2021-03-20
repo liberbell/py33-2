@@ -39,3 +39,6 @@ if __name__ == '__main__':
         file_name = '{}.png'.format(i)
         img = Image.open(file_name)
         img = np.asarray(img) / 255
+        img_array = img.reshape(1, 784)
+        result = predict(img_array)
+        print(result)
