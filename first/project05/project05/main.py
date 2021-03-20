@@ -24,3 +24,12 @@ def create_and_save():
     with open('mnist', 'wb') as file:
         pickle.dump(clf, file)
     return clf
+
+try:
+    clf = read()
+except:
+    FileNotFoundError:
+    clf = create_and_save()
+
+def predict(img_array):
+    result = clf.predict(img_array)
