@@ -32,3 +32,4 @@ except FileNotFoundError:
 
 def predict(img_array):
     result = clf.predict(img_array)
+    return str(int(result[0]))
