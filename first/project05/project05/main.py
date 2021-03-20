@@ -27,8 +27,7 @@ def create_and_save():
 
 try:
     clf = read()
-except:
-    FileNotFoundError:
+except FileNotFoundError:
     clf = create_and_save()
 
 def predict(img_array):
