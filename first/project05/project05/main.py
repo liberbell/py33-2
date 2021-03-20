@@ -12,7 +12,7 @@ def read():
 def create_and_save():
     mnist = datasets.fetch_mldata('MNIST original', data_home='image/')
     X = mnist.data / 255
-    Y = mnist.target
+    y = mnist.target
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, train_size = 50000, test_size = 0
