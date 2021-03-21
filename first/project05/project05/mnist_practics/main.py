@@ -38,6 +38,8 @@ if __name__ == '__main__':
     for i in range(0, 10):
         file_name = '{}.png'.format(i)
         img = Image.open(file_name)
+        img.show()
+        import sys; sys exit()
         img = np.asarray(img) / 255
         img_array = img.reshape(1, 784)
         result = predict(img_array)
