@@ -15,7 +15,7 @@ def create_and_save():
     y = mnist.target
 
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, train_size = 50000, test_size = 0
+        X, y, train_size = 1000, test_size = 300
     )
 
     clf = svm.SVC()
