@@ -40,7 +40,5 @@ if __name__ == '__main__':
         img = Image.open(file_name)
         img = np.asarray(img) / 255
         img_array = img.reshape(1, 784)
-        print(img_array)
-        import sys ; sys.exit()
         result = predict(img_array)
         print(result)
