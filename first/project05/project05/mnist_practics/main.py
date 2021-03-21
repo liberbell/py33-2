@@ -10,7 +10,7 @@ def read():
     return clf
 
 def create_and_save():
-    mnist = datasets.fetch_openml('MNIST original', data_home='image/')
+    mnist = datasets.fetch_openml('mnist_784', data_home='image/')
     X = mnist.data / 255
     y = mnist.target
 
