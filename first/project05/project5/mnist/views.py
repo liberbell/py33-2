@@ -15,7 +15,7 @@ class UploadView(generic.FormView):
     def form_valid(self, form):
         # アップロードファイル本体を取得
         file = form.cleaned_data['file']
-        Image.open(file).show()
+        # Image.open(file).show()
         # ファイルを、28*28にリサイズし、グレースケール(モノクロ画像)
         img = Image.open(file).resize((28, 28)).convert('L')
 
